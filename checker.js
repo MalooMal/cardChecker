@@ -26,9 +26,12 @@ const batch2 = [valid3, valid4, valid5, invalid1]
 
 // Validates a single credit card number array, and returns true for a valid credit card and false for an invalid one.
 const validateCred = (array) => {
+  //copy of array
   let _array = array.map(num => num)
+  //array without last number 
   let arrayWOLN = array.slice(0,array.length-1);
   let reversedArrayWOLN = arrayWOLN.reverse();
+  // every other digit of the array
   let eODigit = reversedArrayWOLN.filter((element, index) => {
   return index % 2 === 0;
 })
